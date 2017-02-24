@@ -1,3 +1,23 @@
 // Place all the styles related to the Car controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+table {
+  margin: 20px;
+}
+td {
+  padding: 5px;
+  text-align: center;
+}
+
+#lights-on {
+  color: green;
+}
+
+#lights-off {
+  color: red;
+}
+
+#bottom-row {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}

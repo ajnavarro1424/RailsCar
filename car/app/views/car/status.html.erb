@@ -11,7 +11,7 @@
       </header>
       <div class="row">
         <div class="col-sm-4">
-          <h3>Make: <%=@car.make%></h3>
+          <h3 id="make" style="color: <%=@color%>;">Make: <%=@car.make%></h3>
         </div>
         <div class="col-sm-4">
           <h3>Model: <%=@car.model%></h3>
@@ -25,17 +25,39 @@
       </div>
       <div class="row">
         <div class="col-sm-6">
-          <h2>Speed Tester:</h2>
-          <h3><%=@car.speed%></h3>
+
+          <h3 id="speed">Speed: <%=@car.speed%></h3>
+          <% if @car.lights == "Off" %>
+            <h3>Lights <span id="lights-off"><%=@car.lights%></span></h3>
+          <% else %>
+            <h3>Lights  <span id="lights-on"><%=@car.lights%></span></h3>
+          <% end %>
+          <% if @car.parking_brake == false %>
+            <h3>Parking Brake: <span id="brake-off"><%=@car.parking_brake%></span></h3>
+          <% else %>
+            <h3>Parking Brake:  <span id="brake-on"><%=@car.parking_brake%></span></h3>
+          <% end %>
         </div>
-        <div class="col-sm-6">
-          <%= button_to "Accelerate", :action => "accelerate" %>
-          <%= button_to "Brake", :action => "brake" %>
-          <br>
-          <%= button_to "Simulate New Car", :action => "newcar"   %>
+        <div id="bottom-row" class="col-sm-6">
+          <table>
+            <tr>
+              <td>  <%= button_to "Accelerate", :action => "accelerate" %></td>
+              <td>  <%= button_to "Brake", :action => "brake" %></td>
+            </tr>
+            <tr>
+              <td>  <%= button_to "Toggle Lights", :action => "toggleLights" %></td>
+              <td>  <%= button_to "Simulate New Car", :action => "newcar"   %></td>
+            </tr>
+          </table>
+          <form id="parking-form" action="/car/toggle_brake" method="get">
+            <label for="On">On</label>
+            <input type="radio" name="brake" value="On" >  <br>
+            <label for="Off">Off</label>
+            <input type="radio" name="brake" value="Off">  <br>
+            <input type="submit" value="Submit Brake">
+          </form>
         </div>
       </div>
-
 
 
 

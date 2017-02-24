@@ -9,6 +9,9 @@ Rails.application.routes.draw do
 
   post '/car/brake' => 'car#brake'
 
+  post '/car/toggleLights' => 'car#toggleLights'
+
+  get '/car/toggle_brake' => 'car#toggle_brake'
   post '/car/newcar' => 'car#newcar'
 
   # The priority is based upon order of creation: first created -> highest priority.
