@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Car Status</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Simulated Car Specifications</h1>
+      </header>
+      <div class="row">
+        <div class="col-sm-4">
+          <h3>Make: <%=@car.make%></h3>
+        </div>
+        <div class="col-sm-4">
+          <h3>Model: <%=@car.model%></h3>
+        </div>
+        <div class="col-sm-4">
+          <h3>Year: <%=@car.year%></h3>
+        </div>
+      </div>
+      <div class="row">
+        <img src="https://c1.staticflickr.com/3/2722/4029169691_f2683048de_b.jpg" alt="">
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <h2>Speed Tester:</h2>
+          <h3><%=@car.speed%></h3>
+        </div>
+        <div class="col-sm-6">
+          <%= button_to "Accelerate", :action => "accelerate" %>
+          <%= button_to "Brake", :action => "brake" %>
+          <br>
+          <%= button_to "Simulate New Car", :action => "newcar"   %>
+        </div>
+      </div>
+
+
+
+
+    </div>
+
+  </body>
+</html>

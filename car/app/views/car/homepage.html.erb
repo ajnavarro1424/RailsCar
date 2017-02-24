@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to the Car Simulator</title>
+  </head>
+  <body>
+    <div class="container">
+    <header>
+      <h1 style="text-align: center">Welcome to the Car Simulator</h1>
+    </header>
+    <div id="simCar">
+        <div class="row">
+          <div class="col-sm-6">
+            <h2>Simulate your dream car!</h2>
+            <%= flash[:alert] %>
+            <form action="simulate" method="get">
+              <label for="make">Make</label>
+              <input type="text" name="make" >
+              </br>
+              <label for="model">Model</label>
+              <input type="text" name="model" >
+              </br>
+              <label for="year">Year</label>
+              <input type="number" name="year" >
+              <input type="submit" value="Submit">
+            </form>
+          </div>
+          <div class="col-sm-6">
+              <img src="https://s-media-cache-ak0.pinimg.com/originals/89/1a/ed/891aed90554acdec19d7399bfe395b4f.jpg" alt="">
+          </div>
+        </div>
+      </div>
+
+
+      </div>
+  </body>
+</html>
